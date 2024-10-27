@@ -15,11 +15,13 @@ export default class MyPlugin extends Plugin {
 
 	async onload() {
 		await this.loadSettings();
+		// 控制台
+		console.log('loading plugin');
 
 		// This creates an icon in the left ribbon.
 		const ribbonIconEl = this.addRibbonIcon('dice', 'Sample Plugin', (evt: MouseEvent) => {
 			// Called when the user clicks the icon.
-			new Notice('This is a notice!');
+			new Notice('Hello XJK!');
 		});
 		// Perform additional things with the ribbon
 		ribbonIconEl.addClass('my-plugin-ribbon-class');
@@ -79,7 +81,8 @@ export default class MyPlugin extends Plugin {
 	}
 
 	onunload() {
-
+		// 控制台
+		console.log('unloading plugin');
 	}
 
 	async loadSettings() {
